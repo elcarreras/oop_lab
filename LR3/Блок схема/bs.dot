@@ -1,0 +1,89 @@
+digraph G {
+    rankdir=TB;
+    node [shape=rectangle, style=rounded, fontname="Consolas"];
+
+    start [label="Начало программы", shape=ellipse];
+    io [label="Чтение t, N, X, Y из input.txt"];
+    init [label="Z = 0"];
+
+    cond_t [label="t == 0 ?", shape=diamond];
+    cond_t1 [label="t == 1 ?", shape=diamond];
+
+    end [label="Вывод Z\nЗакрытие файлов", shape=ellipse];
+
+    start -> io -> init -> cond_t;
+
+    // ------------------- FOR BLOCK -------------------
+    subgraph cluster_for {
+        label="Цикл for (t == 0)";
+        style=dashed;
+        fontname="Consolas";
+
+        for_init [label="i = 0"];
+        for_cond [label="i < N ?", shape=diamond];
+        for_pow [label="Если i == 0:\n  powx = 1\n  powy = 2\nИначе:\n  powx = 2 + 4*(i/2)\n  powy = 4*((i+1)/2)"];
+        for_temp [label="temp_Z = X^powx * Y^powy"];
+        for_sign [label="i % 2 == 0 ?", shape=diamond];
+        for_plus [label="Z += temp_Z / (powy + powx)"];
+        for_minus [label="Z -= temp_Z / (powx - powy)"];
+        for_inc [label="i++"];
+
+        for_init -> for_cond;
+        for_cond -> for_pow [label="да"];
+        for_pow -> for_temp -> for_sign;
+        for_sign -> for_plus [label="да"];
+        for_sign -> for_minus [label="нет"];
+        for_plus -> for_inc;
+        for_minus -> for_inc;
+        for_inc -> for_cond;
+        for_cond -> end [label="нет"];
+    }
+
+    // ------------------- WHILE BLOCK -------------------
+    subgraph cluster_while {
+        label="Цикл while (t == 1)";
+        style=dashed;
+        fontname="Consolas";
+
+        while_init [label="i = 0"];
+        while_cond [label="i < N ?", shape=diamond];
+        while_pow [label="Если i == 0:\n  powx = 1\n  powy = 2\nИначе:\n  powx = 2 + 4*(i/2)\n  powy = 4*((i+1)/2)"];
+        while_temp [label="temp_Z = X^powx * Y^powy"];
+        while_sign [label="i % 2 == 0 ?", shape=diamond];
+        while_plus [label="Z += temp_Z / (пowy + powx)"];
+        while_minus [label="Z -= temp_Z / (powx - powy)"];
+        while_inc [label="i++"];
+
+        while_init -> while_cond;
+        while_cond -> while_pow [label="да"];
+        while_pow -> while_temp -> while_sign;
+        while_sign -> while_plus [label="да"];
+        while_sign -> while_minus [label="нет"];
+        while_plus -> while_inc;
+        while_minus -> while_inc;
+        while_inc -> while_cond;
+        while_cond -> end [label="нет"];
+    }
+
+    // ------------------- DO WHILE BLOCK -------------------
+    subgraph cluster_dowhile {
+        label="Цикл do while (t == 2)";
+        style=dashed;
+        fontname="Consolas";
+
+        do_init [label="i = 0"];
+        do_body [label="Выполнение тела:\npowx/powy/temp_Z/операции с Z"];
+        do_inc [label="i++"];
+        do_cond [label="i < N ?", shape=diamond];
+
+        do_init -> do_body -> do_inc -> do_cond;
+        do_cond -> do_body [label="да"];
+        do_cond -> end [label="нет"];
+    }
+
+    // ----------- routing between clusters ------------
+    cond_t -> for_init [label="да"];
+    cond_t -> cond_t1 [label="нет"];
+    cond_t1 -> while_init [label="да"];
+    cond_t1 -> do_init [label="нет"];
+}

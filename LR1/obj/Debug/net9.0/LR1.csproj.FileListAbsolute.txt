@@ -1,0 +1,14 @@
+C:\Users\iwtru\Desktop\OOP\LR1\bin\Debug\net9.0\LR1.exe
+C:\Users\iwtru\Desktop\OOP\LR1\bin\Debug\net9.0\LR1.deps.json
+C:\Users\iwtru\Desktop\OOP\LR1\bin\Debug\net9.0\LR1.runtimeconfig.json
+C:\Users\iwtru\Desktop\OOP\LR1\bin\Debug\net9.0\LR1.dll
+C:\Users\iwtru\Desktop\OOP\LR1\bin\Debug\net9.0\LR1.pdb
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.AssemblyInfoInputs.cache
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.AssemblyInfo.cs
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.csproj.CoreCompileInputs.cache
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.dll
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\refint\LR1.dll
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.pdb
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\LR1.genruntimeconfig.cache
+C:\Users\iwtru\Desktop\OOP\LR1\obj\Debug\net9.0\ref\LR1.dll

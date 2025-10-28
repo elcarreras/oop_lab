@@ -1,0 +1,13 @@
+digraph Task2 {
+  rankdir=TB;
+  node [shape=box, fontname="Arial"];
+
+  Start [shape=oval, label="Start"];
+  DeclVars [label="Объявление переменных:\nint a_1 = 123;\ndouble b = 369.14;\nfloat x = 2.634, y = 1.354;"];
+  Calc [label="Вычисление:\nanswer = a_1 + b - a_1 * (x + y)"];
+  Output [label="Вывод answer"];
+  WaitKey [label="Ожидание нажатия клавиши"];
+  End [shape=oval, label="End"];
+
+  Start -> DeclVars -> Calc -> Output -> WaitKey -> End;
+}

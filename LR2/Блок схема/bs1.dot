@@ -1,0 +1,31 @@
+digraph G {
+    rankdir=TB;
+    node [shape=rectangle, fontname="Consolas", fontsize=10];
+    edge [fontname="Consolas", fontsize=10];
+
+    start [shape=ellipse, label="Начало"];
+    io_redirect [label="Переопределение ввода/вывода:\ninput.txt → Console.In\noutput.txt → Console.Out"];
+    read_vars [label="Считать a, b, c, d, e"];
+    
+    s_check [shape=diamond, label="c + b - e > 0"];
+    s_calc [label="s = b / (√(c + b - e) + 1)\nВывести s (округлить до 4 знаков)"];
+    s_error [label="Вывести 'Error'"];
+
+    k_check [shape=diamond, label="a >= 0"];
+    k_calc [label="k = √(c + √(b - a)) / √(a)\nВывести k (округлить до 4 знаков)"];
+    k_error [label="Вывести 'Error'"];
+
+    io_restore [label="Восстановить ввод/вывод\nЗакрыть файлы"];
+    end [shape=ellipse, label="Конец"];
+
+    start -> io_redirect -> read_vars -> s_check;
+    s_check -> s_calc [label="Да"];
+    s_check -> s_error [label="Нет"];
+    s_calc -> k_check;
+    s_error -> k_check;
+    k_check -> k_calc [label="Да"];
+    k_check -> k_error [label="Нет"];
+    k_calc -> io_restore;
+    k_error -> io_restore;
+    io_restore -> end;
+}

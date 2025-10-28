@@ -1,0 +1,20 @@
+digraph Task1 {
+  rankdir=TB;
+  node [shape=box, fontname="Arial"];
+
+  Start [shape=oval, label="Start"];
+
+  DeclVars [label="Объявление строковых переменных:\nlabName\nstudentName\ngroup\nspecialtyCode\nbirthDate\nresidence\nfavoriteSubject\nhobbies"];
+
+  Output1 [label="Вывод labName"];
+  Output2 [label="Вывод studentName"];
+  Output3 [label="Вывод group и specialtyCode"];
+  Output4 [label="Вывод birthDate"];
+  Output5 [label="Вывод residence"];
+  Output6 [label="Вывод favoriteSubject"];
+  Output7 [label="Вывод hobbies"];
+
+  End [shape=oval, label="End"];
+
+  Start -> DeclVars -> Output1 -> Output2 -> Output3 -> Output4 -> Output5 -> Output6 -> Output7 -> End;
+}
