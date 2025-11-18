@@ -12,3 +12,5 @@ C:\Users\iwtru\Desktop\OOP\LR3\obj\Debug\net9.0\refint\LR3.dll
 C:\Users\iwtru\Desktop\OOP\LR3\obj\Debug\net9.0\LR3.pdb
 C:\Users\iwtru\Desktop\OOP\LR3\obj\Debug\net9.0\LR3.genruntimeconfig.cache
 C:\Users\iwtru\Desktop\OOP\LR3\obj\Debug\net9.0\ref\LR3.dll
+C:\Users\iwtru\Desktop\OOP\LR3\obj\Debug\net9.0\LR3.sourcelink.json
+C:\Users\iwtru\Desktop\OOP\LR3\bin\Debug\net9.0\input.txt
